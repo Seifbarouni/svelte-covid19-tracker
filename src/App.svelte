@@ -17,6 +17,15 @@
   let loading = false;
 
   onMount(async () => {
+    if (
+      localStorage.theme === "dark" ||
+      (!"theme" in localStorage &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
+      document.querySelector("html").classList.add("dark");
+    } else if (localStorage.theme === "dark") {
+      document.querySelector("html").classList.add("dark");
+    }
     loading = true;
     const res = await fetch(`https://api.covid19api.com/summary`);
     data = await res.json();
@@ -87,10 +96,10 @@
 {:else}
   <Header />
   <div
-    class="flex flex-col items-center justify-center mt-12"
+    class="flex flex-col items-center justify-center dark:bg-gray-700   mt-12"
     in:fade={{ duration: 500 }}
   >
-    <div class="flex justify-center flex-col items-center">
+    <div class="flex justify-center flex-col items-center dark:text-gray-300">
       <div class="font-bold md:text-2xl text-xl">{ctr}</div>
       <div class="md:text-xl text-base mt-2">
         {formattedDate}
@@ -130,7 +139,7 @@
     <div class="mt-6 mb-2">
       <!-- svelte-ignore a11y-no-onchange -->
       <select
-        class="focus:outline-none w-42 md:text-base text-sm  rounded-md border border-indigo-200 bg-indigo-100 px-2 py-2 text-center"
+        class="focus:outline-none w-42 md:text-base text-sm  rounded-md  bg-indigo-100 px-2 py-2 dark:bg-gray-500 dark:text-gray-100"
         style="-webkit-appearance: none;"
         bind:value={selected}
         on:change={handleChange}
@@ -144,7 +153,7 @@
     {#if ctr != "Global"}
       <div class="mt-2  w-36  text-center  rounded-md text-indigo-600    mb-4 ">
         <button
-          class="focus:outline-none md:text-base text-sm font-bold hover:text-indigo-400 "
+          class="focus:outline-none md:text-base text-sm font-bold hover:text-indigo-400 dark:text-indigo-300 dark:hover:text-indigo-400"
           on:click={global}>Back to Global</button
         >
       </div>
