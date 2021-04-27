@@ -131,6 +131,7 @@
       <!-- svelte-ignore a11y-no-onchange -->
       <select
         class="focus:outline-none w-42 border border-indigo-200 md:text-base text-sm rounded-md"
+        style="-webkit-appearance: none;"
         bind:value={selected}
         on:change={handleChange}
       >
