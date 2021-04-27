@@ -99,7 +99,7 @@
     <div class="flex lg:flex-row flex-col  justify-center mt-6">
       <div
         class="bg-indigo-300 p-3 md:w-96 w-72 h-44 rounded-md shadow-lg
-    flex flex-col justify-evenly items-center hover:shadow-xl
+    flex flex-col justify-evenly items-center 
     "
       >
         <div class="font-bold text-indigo-600 text-xl">Cases</div>
@@ -109,7 +109,7 @@
       <div>&nbsp;</div>
       <div
         class="bg-indigo-300  p-3 md:w-96 w-72 h-44 rounded-md shadow-lg
-    flex flex-col justify-evenly items-center hover:shadow-xl
+    flex flex-col justify-evenly items-center 
     "
       >
         <div class="font-bold text-indigo-600 text-xl">Deaths</div>
@@ -120,7 +120,7 @@
     <div>&nbsp;</div>
     <div
       class="bg-indigo-300  p-3 md:w-96 w-72 h-44 rounded-md shadow-lg
-  flex flex-col justify-evenly items-center hover:shadow-xl
+  flex flex-col justify-evenly items-center 
   "
     >
       <div class="font-bold text-indigo-600 text-xl">Recovered</div>
@@ -130,12 +130,12 @@
     <div class="mt-6 mb-2">
       <!-- svelte-ignore a11y-no-onchange -->
       <select
-        class="focus:outline-none w-42 border border-indigo-200 md:text-base text-sm rounded-md"
+        class="focus:outline-none w-42 md:text-base text-sm  rounded-md border border-indigo-200 bg-indigo-100 px-2 py-2 text-center"
         style="-webkit-appearance: none;"
         bind:value={selected}
         on:change={handleChange}
       >
-        <option value="">Select Country</option>
+        <option value="" class="font-bold text-center">Select Country </option>
         {#each countries as country}
           <option value={country.Country}>{country.Country}</option>
         {/each}
