@@ -127,12 +127,10 @@
       <div><span class="font-bold">New: </span>{newRecovered}</div>
       <div><span class="font-bold">Total: </span>{totalRecovered}</div>
     </div>
-    <div
-      class="mt-6 border border-indigo-200  text-center p-1 rounded-md bg-indigo-100 mb-2"
-    >
+    <div class="mt-6 mb-2">
       <!-- svelte-ignore a11y-no-onchange -->
       <select
-        class="focus:outline-none w-36 bg-indigo-100 md:text-base text-sm rounded-md "
+        class="focus:outline-none w-42 border border-indigo-200 md:text-base text-sm rounded-md"
         bind:value={selected}
         on:change={handleChange}
       >
@@ -143,9 +141,7 @@
       </select>
     </div>
     {#if ctr != "Global"}
-      <div
-        class="mt-2  w-36  text-center p-1 rounded-md text-indigo-600    mb-4 "
-      >
+      <div class="mt-2  w-36  text-center  rounded-md text-indigo-600    mb-4 ">
         <button
           class="focus:outline-none md:text-base text-sm font-bold hover:text-indigo-400 "
           on:click={global}>Back to Global</button
