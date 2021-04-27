@@ -610,8 +610,16 @@ video {
   margin-top: 0.5rem;
 }
 
+.mr-2 {
+  margin-right: 0.5rem;
+}
+
 .mb-2 {
   margin-bottom: 0.5rem;
+}
+
+.ml-2 {
+  margin-left: 0.5rem;
 }
 
 .mb-4 {
@@ -689,6 +697,10 @@ video {
 .hover\:text-indigo-400:hover {
   --tw-text-opacity: 1;
   color: rgba(129, 140, 248, var(--tw-text-opacity));
+}
+
+.hover\:underline:hover {
+  text-decoration: underline;
 }
 
 .w-36 {
@@ -793,6 +805,10 @@ video {
     line-height: 2.25rem;
   }
 
+  .md\:mt-1 {
+    margin-top: 0.25rem;
+  }
+
   .md\:w-96 {
     width: 24rem;
   }
@@ -801,6 +817,10 @@ video {
 @media (min-width: 1024px) {
   .lg\:flex-row {
     flex-direction: row;
+  }
+
+  .lg\:mt-1 {
+    margin-top: 0.25rem;
   }
 }
 
